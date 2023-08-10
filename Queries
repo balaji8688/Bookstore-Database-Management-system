@@ -1,0 +1,20 @@
+-- Retrieve all books
+SELECT * FROM Books;
+
+-- Retrieve authors and their books
+SELECT Authors.Name, Books.Title
+FROM Authors
+JOIN Books ON Authors.AuthorID = Books.AuthorID;
+
+-- Calculate total sales by book
+SELECT Books.Title, SUM(Orders.TotalAmount) AS TotalSales
+FROM Books
+JOIN Orders ON Books.ISBN = Orders.ISBN
+GROUP BY Books.Title;
+
+-- Find orders for a specific customer
+SELECT Customers. Name, Books.Title, Orders.OrderDate
+FROM Customers
+JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+JOIN Books ON Orders.ISBN = Books.ISBN
+WHERE Customers.Name = 'Alice Johnson';
