@@ -1,0 +1,23 @@
+-- Insert authors
+INSERT INTO Authors (AuthorID, Name, Birthdate)
+VALUES
+    (1, 'John Smith', '1980-01-15'),
+    (2, 'Jane Doe', '1975-06-22');
+
+-- Insert books
+INSERT INTO Books (ISBN, Title, AuthorID, Genre, Price)
+VALUES
+    ('978-1234567890', 'Sample Book 1', 1, 'Fiction', 19.99),
+    ('978-9876543210', 'Sample Book 2', 2, 'Mystery', 14.99);
+
+-- Insert customers
+INSERT INTO Customers (CustomerID, Name, Email)
+VALUES
+    (1, 'Alice Johnson', 'alice@example.com'),
+    (2, 'Bob Smith', 'bob@example.com');
+
+-- Insert orders
+INSERT INTO Orders (OrderID, CustomerID, ISBN, OrderDate, Quantity, TotalAmount)
+VALUES
+    (1, 1, '978-1234567890', '2023-08-01', 2, 39.98),
+    (2, 2, '978-9876543210', '2023-08-02', 1, 14.99);
